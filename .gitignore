@@ -1,0 +1,4 @@
+.idea/
+__pycache__/
+*.pyc
+detection_data_augmented/
