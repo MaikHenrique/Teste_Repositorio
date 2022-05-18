@@ -147,9 +147,10 @@ def evaluate_classifiers():
 if __name__ == '__main__':
     input_shape = (96, 96)
 
-    data_dir = "./recognition/augmented_data"
-    # model = train()
-    model = test()
+    # data_dir = "./recognition/augmented_data" /recognition/
+    data_dir = "./recognition/"
+    model = train()
+    #model = test()
     model.summary()
 
     # evaluate_classifiers()
