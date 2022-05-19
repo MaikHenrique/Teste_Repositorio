@@ -1,5 +1,6 @@
 import glob
 import numpy as np
+import os
 from sklearn.model_selection import train_test_split, KFold
 from itertools import groupby
 from PIL import Image
@@ -13,7 +14,7 @@ def read_splitted(data_dir, test_size=.15):
 
 def read_data(data_dir):
     files = glob.glob(data_dir + '/*/*.[jp][pn][g]')
-    data = [[file, file.split("\\")[-2]] for file in files]
+    data = [[file, file.split(os.sep)[-2]] for file in files]
     data = np.array(data)
     return data[..., 0], data[..., 1]
 
