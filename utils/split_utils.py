@@ -20,8 +20,8 @@ def read_data(data_dir):
 
 
 def group_by_class(X):
-    sorted_x = sorted(X, key=lambda file: file.split("\\")[-2])
-    return {k: list(v) for k, v in groupby(sorted_x, key=lambda file: file.split("\\")[-2])}
+    sorted_x = sorted(X, key=lambda file: file.split(os.sep)[-2])
+    return {k: list(v) for k, v in groupby(sorted_x, key=lambda file: file.split(os.sep)[-2])}
 
 
 def load_image(filepath, label, input_shape):
