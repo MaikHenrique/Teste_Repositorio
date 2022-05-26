@@ -60,21 +60,23 @@ if __name__ == '__main__':
     resized_image = cv2.resize(img, image_shape)
     array = np.array([resized_image], dtype=np.float)
     array *= 1 / 255
-    # history = model.fit(array, bbox, batch_size=1, epochs=120, validation_data=(array, bbox))
-
-    # plt.plot(history.history['loss'])
-    # plt.plot(history.history['val_loss'])
-    # plt.legend(["loss", "val_loss"])
-    # plt.title("Perda (Menor melhor)")
-    # plt.show(block=True)
+    #estava cometado daqui
+    history = model.fit(array, bbox, batch_size=1, epochs=120, validation_data=(array, bbox))
+    
+    plt.plot(history.history['loss'])
+    plt.plot(history.history['val_loss'])
+    plt.legend(["loss", "val_loss"])
+    plt.title("Perda (Menor melhor)")
+    plt.show(block=True)
     #
-    # plt.plot(history.history['iou'])
-    # plt.plot(history.history['val_iou'])
-    # plt.plot(history.history['confidence'])
-    # plt.plot(history.history['val_confidence'])
-    # plt.legend(["iou", "val_iou", "confidence", "val_confidence"])
-    # plt.title("Métricas IoU e Confidence (Maior melhor)")
-    # plt.show(block=True)
+    plt.plot(history.history['iou'])
+    plt.plot(history.history['val_iou'])
+    plt.plot(history.history['confidence'])
+    plt.plot(history.history['val_confidence'])
+    plt.legend(["iou", "val_iou", "confidence", "val_confidence"])
+    plt.title("Métricas IoU e Confidence (Maior melhor)")
+    plt.show(block=True)
+    #ate aqui
 
     test = model.predict(array, batch_size=1)
     print(test[0][2][4])
