@@ -35,7 +35,8 @@ def train():
 
 def test():
     model = build_model(input_shape)
-    model.load_weights("./bkp/classifier_xception.h5")
+    #model.load_weights("./bkp/classifier_xception.h5")
+    model.load_weights(".classifier.h5")
     return model
 
 
@@ -151,8 +152,8 @@ if __name__ == '__main__':
 
     # data_dir = "./recognition/augmented_data" 
     data_dir = "./recognition/augmented_data"
-    model = train()
-    #model = test()
+    #model = train()
+    model = test()
     model.summary()
 
     # evaluate_classifiers()
