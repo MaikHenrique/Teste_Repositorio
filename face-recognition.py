@@ -62,6 +62,8 @@ def plot_distribution():
     ax.set_title('Xception', fontsize=16)
     ax.scatter(components[:, 0], components[:, 1], c=colors, cmap="Set2_r", s=60)
     plt.show()
+    fig.savefig('saved_figure_fig.png')
+    ax.savefig('saved_figure_ax.png')
 
 
 def export_tsv():
