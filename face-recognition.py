@@ -36,7 +36,7 @@ def train():
 def test():
     model = build_model(input_shape)
     #model.load_weights("./bkp/classifier_xception.h5")
-    model.load_weights(".classifier.h5")
+    model.load_weights("./classifier.h5")
     return model
 
 
